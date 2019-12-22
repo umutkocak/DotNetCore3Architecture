@@ -8,7 +8,7 @@ using Entities.Concrete;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfLanguageDal : EfEntityRepositoryBase<Language, SeyirContext>, ILanguageDal
+    public class EfLanguageDal : EfEntityRepositoryBase<Language, ArchitectureContext>, ILanguageDal
     {
     }
 }

@@ -8,11 +8,11 @@ using DataAccess.Concrete.EntityFramework.Contexts;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-	public class EfUserDal : EfEntityRepositoryBase<User,SeyirContext>,IUserDal
+	public class EfUserDal : EfEntityRepositoryBase<User,ArchitectureContext>,IUserDal
 	{
         public List<OperationClaim> GetClaims(User user)
         {
-            using var context=new SeyirContext();
+            using var context=new ArchitectureContext();
             var result = from operationClaim in context.OperationClaims
                 join userOperationClaim in context.UserOperationClaims on operationClaim.Id equals userOperationClaim
                     .OperationClaimId

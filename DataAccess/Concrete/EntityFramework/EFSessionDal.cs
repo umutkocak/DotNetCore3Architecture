@@ -8,11 +8,11 @@ using Entities.Dtos;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-	public class EfSessionDal : EfEntityRepositoryBase<Session,SeyirContext>,ISessionDal
+	public class EfSessionDal : EfEntityRepositoryBase<Session,ArchitectureContext>,ISessionDal
 	{
         public List<Session> GetActiveSessions(int userId)
         {
-            using var context = new SeyirContext();
+            using var context = new ArchitectureContext();
             var result = from session in context.Sessions
                 where session.UserId == userId && session.IsActive
                 select new Session();
